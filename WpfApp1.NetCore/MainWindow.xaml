@@ -11,6 +11,7 @@
 	AllowsTransparency="True"
 	Background="Transparent"
 	SizeToContent="Height"
+	Topmost="True"
 	WindowStartupLocation="Manual"
 	WindowStyle="None"
 	mc:Ignorable="d">
@@ -19,14 +20,18 @@
 		BorderBrush="Transparent"
 		BorderThickness="0"
 		CornerRadius="10">
-		<StackPanel Background="Transparent" OverridesDefaultStyle="True">
+		<StackPanel
+			Name="container"
+			Background="Transparent"
+			OverridesDefaultStyle="True">
 			<!--<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="400*" />
 			</Grid.ColumnDefinitions>-->
 			<Button
 				x:Name="BtnBack"
-				Height="37"
-				Margin="10,6,336,0"
+				Width="20"
+				Height="20"
+				Margin="10,10,336,10"
 				VerticalAlignment="Top"
 				Panel.ZIndex="10"
 				Background="Transparent"
@@ -35,32 +40,35 @@
 				Foreground="Black" />
 			<ListBox
 				Name="listBox"
-				Height="150"
-				Padding="0,50,0,0"
-				VerticalAlignment="Top"
+				Width="350"
+				Height="Auto"
+				Margin="25,0,25,0"
+				Padding="0,0,0,0"
 				Panel.ZIndex="5"
 				Background="Transparent"
 				BorderBrush="Transparent">
 				<ListBox.ItemTemplate>
 					<DataTemplate>
-						<Grid>
-							<TextBlock Text="{Binding Title}" />
-						</Grid>
+						<TextBlock
+							Height="{Binding ItemHeight}"
+							Margin="0,0,0,0"
+							Padding="0"
+							Text="{Binding Title}" />
 					</DataTemplate>
 				</ListBox.ItemTemplate>
 			</ListBox>
 			<Button
 				x:Name="BtnAdd"
-				Height="37"
-				Margin="0,0,290,10"
+				Width="80"
+				Height="20"
+				Margin="10,0,290,10"
+				Padding="0"
 				VerticalAlignment="Bottom"
 				VerticalContentAlignment="Center"
-				Panel.ZIndex="10"
 				Background="Transparent"
 				BorderBrush="Transparent"
 				Click="BtnAdd_Click"
 				Content="Add 20 Items" />
 		</StackPanel>
-
 	</Border>
 </Window>
